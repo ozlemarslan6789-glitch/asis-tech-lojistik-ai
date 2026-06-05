@@ -1,0 +1,11 @@
+YAPAY ZEKA OPERATÖRLÜĞÜ - FİNAL UYGULAMA ÖDEVİ DÖKÜMANTASYONU
+
+ÖDEV 1: SEKTÖREL VERİTABANI VE DATASET ÜRETİMİ
+- Sektör olarak "Lojistik" seçilmiştir.
+- lojistik_sirketi.db isimli SQLite veritabanı oluşturulmuş ve içerisine makine öğrenmesi eğitimine uygun 51 adet anlamlı lojistik sevkiyat kaydı (Mesafe, Trafik Yoğunluğu, Hava Durumu, Araç Tipi ve Teslimat Süresi) eklenmiştir.
+
+ÖDEV 2: VERİ ÖN İŞLEME VE TENSORFLOW JSON API
+- dataset_api.py betiği ile veritabanındaki ham veriler SQL sorgusuyla çekilmiştir.
+- Yapay zeka modelinin eğitimi için kategorik veriler (Metinler) Label Encoding yöntemiyle sayısallaştırılmış, mesafe verisi ise Min-Max Normalization yöntemiyle 0-1 arasına normalize edilmiştir.
+- Çıktı olarak üretilen 'tensorflow_input.json' dosyası, TensorFlow'un veri besleme mimarisine (Features ve Labels) uygun şekilde serialize edilmiştir.
+- Ortamda TensorFlow kurulu olmadığı varsayılarak, model yükleme adımları (tf.data.Dataset.from_tensor_slices) kod bloklarında dökümante edilmiştir.
